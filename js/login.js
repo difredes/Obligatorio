@@ -15,5 +15,5 @@ registro.addEventListener("submit",function(event){
     }
     );
     localStorage.setItem("usuario",JSON.stringify(usuarios));
-    location.href="index.html";
+    location.href="inicio.html";
 });
