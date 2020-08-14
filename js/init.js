@@ -43,7 +43,7 @@ var getJSONData = function(url) {
 
 function check() {
     if (sessionStorage.getItem('user') == null) {
-        window.location = 'login.html'
+        window.location = 'index.html'
     };
 }
 
