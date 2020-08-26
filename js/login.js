@@ -3,14 +3,14 @@
 //elementos HTML presentes.
 
 var registro = document.getElementById("formulario")
-var email = document.getElementById("email");
+var name = document.getElementById("name");
 var pass = document.getElementById("password");
 
 registro.addEventListener("submit",function(event){
     event.preventDefault();
     let usuarios = Array(
     {
-        usuario: email.value,
+        usuario: name.value,
         contraseña:  pass.value
     }
     );
