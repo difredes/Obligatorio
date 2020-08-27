@@ -18,40 +18,35 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Login</a>
-      <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block" id="user" href="my-profile.html"></a>
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-        aria-haspopup="true" aria-expanded="false" id="user-a">
-      </a>
+      aria-haspopup="true" aria-expanded="false" id="user-a">
+    </a>
 
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
-        <a class="dropdown-item" href="#">Mis Compras</a>
-        <a class="dropdown-item" href="cart.html">Carrito</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="index.html">Cerrar Sesión</a>
-      </div>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
+      <a class="dropdown-item" href="#">Mis Compras</a>
+      <a class="dropdown-item" href="cart.html">Carrito</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Cerrar Sesión</a>
+    </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      
     </div>
-  </div>
-  <footer class="text-muted">
     <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        <div class="row">
+            <div class="list-group" id="cat-list-container">
+            </div>
+        </div>
+    </div>
     </div>
   </footer>
   <div id="spinner-wrapper">
