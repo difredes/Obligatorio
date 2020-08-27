@@ -142,11 +142,4 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         showCategoriesList();
     });
-
-    document.getElementById("buscador").addEventListener("keyup", function(){
-       textoBusqueda = document.getElementById("buscador").value;
-       
-       
-       showCategoriesList();
-    });
 });
