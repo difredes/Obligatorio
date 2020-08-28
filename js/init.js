@@ -47,7 +47,8 @@ if (
 
 }
 
-
+//localStorage para que aparezca el email de la persona que ingreso//
 var userGuardado = localStorage.getItem("email");
     document.getElementById("user").innerHTML = userGuardado;
    
+    //DIEGO FREDES, GRUPO 169//

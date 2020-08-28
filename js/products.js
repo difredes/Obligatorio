@@ -139,3 +139,5 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
+
+//DIEGO FREDES, GRUPO 169//
