@@ -59,10 +59,9 @@ function showCategoriesList(){
                             <small class="text-muted">` + category.soldCount + ` artículos</small>
                             </div>
                             <p class="mb-1">` + category.description + `</p>
-                        </div></div>
-                        <p class="mb-1">` + category.cost + `USD` + `</p>
                     </div>
-                </div>
+                    <p class="mb-1">` + category.cost + `USD` + `</p>
+                    </div>
             </a>
             `
         }
