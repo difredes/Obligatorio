@@ -6,6 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+  <meta name = "google-signin-client_id" content = "402054731458-t37g8chhpgpbfdc8gg892aer07fm7pk0.apps.googleusercontent.com">
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -13,6 +14,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link  rel="icon"   href="img/favicon.ico" type="image/ico" />
 </head>
 
 <body>
@@ -30,12 +32,9 @@
 
     <div class="dropdown-menu">
       <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
-      <a class="dropdown-item" href="#">Mis Compras</a>
       <a class="dropdown-item" href="cart.html">Carrito</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="login.html">Cerrar Sesión</a> 
-    </div>
-          <!-- Se crea caja de redes sociales --> 
+      <a class="dropdown-item" href="login.html">Cerrar Sesión</a>
     </div>
     <div class="sticky-container">
       <ul class="sticky">
@@ -52,8 +51,14 @@
           <p><a href="https://www.youtube.com/user/canalceibal" target="_blank">Subscribete en <br>YouYube</a></p>
       </li>
       </ul>
+    </div>
   </nav>
+
+  <div class="container mt-5" id="container">
+    
   </div>
+  
+  
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -61,6 +66,7 @@
       </p>
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      
     </div>
   </footer>
   <div id="spinner-wrapper">
@@ -75,6 +81,8 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="js/negarAcceso.js"></script>
 </body>
 
 </html>
