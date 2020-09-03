@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Chevrolet Onix Joy",
+        "description": "Potenciá tu actitud con Onix Joy que, además de destacarse por su diseño juvenil y moderno, te ofrecé una óptima autonomía, un desempeño equilibrado y el máximo confort interior. \u003cbr\u003eYa sea un viaje largo o un simple paseo por la ciudad, el confort es uno de los puntos fuertes del Onix. Esta versión incluye aire acondicionado, asientos tapizados en tela y gran espacio interior que te garantiza el máximo confort.",
+        "cost": 13500,
+        "currency": "USD",
+        "soldCount": 14,
+        "category": "Autos",
+        "images": [
+            "img/prod1.jpg",
+            "img/prod1_1.jpg",
+            "img/prod1_2.jpg",
+            "img/prod1_3.jpg",
+            "img/prod1_4.jpg"
+        ],
+        "relatedProducts": [1, 2]
+    },
+    {
+        "name": "Fiat Way",
+        "description": "El Uno Way es ideal para la ciudad, pero también se defiende con dignidad en la ruta. \u003cbr\u003eEs un auto con estética aventurera, tiene neumáticos de uso mixto, Suspensiones robustas y un buen despeje del suelo.",
+        "cost": 14500,
+        "currency": "USD",
+        "soldCount": 52,
+        "category": "Autos",
+        "images": [
+            "img/prod2.jpg",
+            "img/prod2_1.jpg",
+            "img/prod2_2.jpg",
+            "img/prod2_3.jpg",
+            "img/prod2_4.jpg"
+        ],
+        "relatedProducts": [2, 3]
+    },
+    {
+        "name": "Suzuki Celerio",
+        "description": "El Suzuki Celerio es un urbano de cinco puertas y 3,60 metros de longitud. Es el coche más pequeño fabricado por Suzuki, y es una alternativa a coches pequeños para la ciudad como el Hyundai i10, el Opel Karl o el Toyota Aygo.",
+        "cost": 12500,
+        "currency": "USD",
+        "soldCount": 25,
+        "category": "Autos",
+        "images": [
+            "img/prod3.jpg",
+            "img/prod3_1.jpg",
+            "img/prod3_2.jpg",
+            "img/prod3_3.jpg",
+            "img/prod3_4.jpg"
+        ],
+        "relatedProducts": [3, 0]
+    },
+    {
+        "name": "Peugeot 208",
+        "description": "El Peugeot 208 es un vehículo utilitario generalista, del segmento B, fabricado por Peugeot desde 2012, como relevo del Peugeot 207. Actualmente se comercializa la segunda generación, presentada en 2019.",
+        "cost": 15200,
+        "currency": "USD",
+        "soldCount": 17,
+        "category": "Autos",
+        "images": [
+            "img/prod4.jpg",
+            "img/prod4_1.jpg",
+            "img/prod4_2.jpg",
+            "img/prod4_3.jpg",
+            "img/prod4_4.jpg"
+        ],
+        "relatedProducts": [0, 1]
+    }
+]
