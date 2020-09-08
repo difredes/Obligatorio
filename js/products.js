@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             showProductsList(productsArray);
         });
 
-        //Buscador por palabra. Desafiate 2
+        // Desafiate 2
         document.getElementById("buscador").addEventListener('input', function () {
 
             buscar = document.getElementById("buscador").value.toLowerCase();
@@ -179,7 +179,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
             buscar = undefined;
             showProductsList(productsArray);
         });
-        //Buscador por palabra. Desafiate 2
 
     });
 });
