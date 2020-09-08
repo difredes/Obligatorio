@@ -1,183 +1,171 @@
+//Entrega 3
 var product = {};
-var comments = [];
+var commentsArray = [];
+const now = new Date();
 
-// ESTA FUNCION MUESTRA EN PANTALLA LAS IMAGENES
-function showImagesGallery(imagenesArray) {
+/*function showImagesGallery(array) {
 
     let htmlContentToAppend = "";
 
-    for (let i = 0; i < imagenesArray.length; i++) {
-        
-        let imageSrc = imagenesArray[i];
+    for (let i = 0; i < array.length; i++) {
+        let imageSrc = array[i];
 
         htmlContentToAppend += `
         <div class="col-lg-3 col-md-4 col-6">
             <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="${imageSrc}" alt="Imagen producto ${i}">
+                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
             </div>
         </div>
-        `;
+        `
 
-        document.getElementById("imagenesDelProducto").innerHTML = htmlContentToAppend;
+        document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     }
 }
 
-// ESTA FUNCION ORDENA LOS COMENTARIOS POR FECHA, DE FORMA DECENDETE
-function ordenarDesendenteComentariosPorFecha(comentariosArray) {
+/*function showComments(array) {
 
-    let result = [];
-        
-    result = comentariosArray.sort(function (a, b) {
-        
-        let fecha1 = new Date(a.dateTime);
-        let fecha2 = new Date(b.dateTime);
 
-        if ( fecha1 > fecha2 ){ return -1; }
-        if (fecha1 < fecha2) { return 1; }
-        return 0;
+    let comentarios = "";
 
-    });
+    for (let i = 0; i < array.length; i++) {
+        let comment = array[i];
 
-    return result;
+        comentarios += `
+                <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                            <div class="mb-1">
+                                <h4>`+ comment.user + ' - ' + product.currency + '  ' + product.cost + `</h4>
+                             <p>`+ product.description + `</p>
+                         </div>    
+                             <small class="text-muted">` + product.soldCount + ' vendidos' + `</small>
+                          </div>
 
+                      </div>
+                   </div>
+               </div>
+              `
+        document.getElementById("cat-list-container").innerHTML = comentarios;
+    }
 }
+*/
 
-// ESTA FUNCION MUESTRA EN PANTALLA LOS COMENTARIOS
-function showComments(comentariosArray) {
+function showProduct(product, arrayComments) {
+    let imagesArray = product.images;
+    let comentarios = "";
+    let imgs = "";
+    let productNameHTML = document.getElementById("productName");
+    let productDescriptionHTML = document.getElementById("productDescription");
+    let productCostHTML = document.getElementById("productCost");
+    let productCountHTML = document.getElementById("soldCount");
 
-    let htmlContentToAppend = "";
+    productNameHTML.innerHTML = product.name;
+    productDescriptionHTML.innerHTML = product.description;
+    productCostHTML.innerHTML = product.cost + " " + product.currency;
+    productCountHTML.innerHTML = product.soldCount + " " + "unidades";
 
-    let meses = [
-        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
-        "Octubre", "Noviembre", "Diciembre"
-    ];
+    for (let i = 0; i < imagesArray.length; i++) {
+        let imageSrc = imagesArray[i];
 
-    let diasSemana = [
-        "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"
-    ];
-
-    for (let i = 0; i < comentariosArray.length; i++) {
-        
-        let comentario = comentariosArray[i];
-
-        let fecha = new Date(comentario.dateTime);
-
-        let fechaString = `
-        ${diasSemana[fecha.getDay()]}, ${fecha.getDate()} de  ${meses[fecha.getMonth()]} de ${fecha.getFullYear()}
-        `;
-
-        htmlContentToAppend += `
-        <br>
-        <p><strong>${comentario.user}</strong> &nbsp` ;
-          
-        for (let i = 1; i <= comentario.score; i++) {
-            htmlContentToAppend += '<span class="fa fa-star checked"></span>';
-        }
-
-        for (let i = comentario.score + 1; i <= 5; i++) {
-            htmlContentToAppend += '<span class="fa fa-star"></span>';
-        }
-
-            
-        htmlContentToAppend += `</p><div style="display: flex;">
-            
-            <p>${comentario.description}. &nbsp <p style="color: gray; font-size: 0.9rem;">${fechaString}</p></p> 
+        imgs += `
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
+            </div>
         </div>
-        <hr />
-        `;
+        `
 
-        document.getElementById("comentariosCalificaciones").innerHTML = htmlContentToAppend;
+        document.getElementById("productImagesGallery").innerHTML = imgs;
+
+
     }
 
+    for (let comment in arrayComments){
+        auxComment = arrayComments[comment];
+        let score = "";
+
+        for(let i=1; i<=auxComment.score; i++){
+            score += `<span class="fa fa-star checked"></span>`;
+        }
+
+        for(let i=auxComment.score + 1; i<=5; i++){
+            score += `<span class="fa fa-star"></span>`;
+        }
+
+        comentarios += `
+                <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                            <div class="mb-1">
+                                <h4>`+ auxComment.user + '  ' + score + `</h4>
+                             <p>`+ auxComment.description + `</p>
+                         </div>    
+                             <small class="text-muted">` + auxComment.dateTime.split(' ')[0] + `</small>
+                          </div>
+
+                      </div>
+                   </div>
+               </div>
+              `
+        document.getElementById("cat-list-container").innerHTML = comentarios;
+        
+    
+    }
+
+    
 }
 
-// CUANDO SE CARGUE LA PAGINA
-document.addEventListener("DOMContentLoaded", function () { // SE VAN A EJECUTAR
-    
-    // ESTO
+
+
+//Función que se ejecuta una vez que se haya lanzado el evento de
+//que el documento se encuentra cargado, es decir, se encuentran todos los
+//elementos HTML presentes.
+document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
-        
         if (resultObj.status === "ok") {
 
             product = resultObj.data;
 
-            let nombreDelProducto  = document.getElementById("nombreDelProducto");
-            let descripcionDelProducto = document.getElementById("descripcionDelProducto");
-            let precioDelProducto = document.getElementById("precioDelProducto");
-            let cantidadDeVentas = document.getElementById("cantidadDeVentas");
-        
-            nombreDelProducto.innerHTML = product.name;
-            descripcionDelProducto.innerHTML = product.description;
-            precioDelProducto.innerHTML = `${product.cost} ${product.currency}`;
-            cantidadDeVentas.innerHTML = product.soldCount;
+            /*
+            let productNameHTML = document.getElementById("productName");
+            let productDescriptionHTML = document.getElementById("productDescription");
+            let productCostHTML = document.getElementById("productCost");
+            let productCountHTML = document.getElementById("soldCount");
+
+
+            productNameHTML.innerHTML = product.name;
+            productDescriptionHTML.innerHTML = product.description;
+            productCostHTML.innerHTML = product.cost + " " + product.currency;
+            productCountHTML.innerHTML = product.soldCount + " " + "unidades";
 
             showImagesGallery(product.images);
+            */
+           //showProduct(product);
+
         }
     });
 
-    // Y ESTO
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
-
         if (resultObj.status === "ok") {
-            comments = resultObj.data;
-            comments = ordenarDesendenteComentariosPorFecha(comments);
-            showComments(comments);
+
+            commentsArray = resultObj.data;
+
+            //Muestro las imagenes en forma de galería
+            showProduct(product, commentsArray);
         }
+    }); 
+    //Desafiate 3
+    document.getElementById("enviarComm").addEventListener("click", function() {
 
-    });
+        let newComment = {
 
-    // SI HAY UN USUARIO LOGUEADO, MOSTRAMOS EL DIV DE COMENTARIO
-    let userLogged = localStorage.getItem('user-logged');
-    if (userLogged) { // SI EXISTE LA INFO EN EL STORAGE
+            score : parseInt(document.getElementById('newCal').value),
+            description : document.getElementById('newComm').value,
+            user : JSON.parse(localStorage.getItem('User-Logged')).email,
+            dateTime : "2020-02-25 18:03:52"
+        };
 
-        document.getElementById("calificacion").style = "display: inline-block";
-    }
+        commentsArray.push(newComment);
+        showProduct(product, commentsArray);
+    })
 
 });
 
-document.getElementById("btn-calificacion").addEventListener("click", function () {
-
-    // EXTRAEMOS LA INFORMACION DE LA CALIFICACION
-    let comentrario = document.getElementById("ta-comentario").value;
-    let calificacion = parseInt(document.getElementById("slct-calificacion").value);
-
-    if (comentrario != "" && calificacion != 0) {
-
-        comentarioParaAgregar = {};
-
-        // EXTRAEMOS EL NOMBRE DE USUARIO
-        let userLogged = localStorage.getItem('user-logged');
-        userLogged = JSON.parse(userLogged);
-        let email = userLogged.email;
-
-        // EXTRAEMOS LA FECHA Y HORA
-        let dateTime = new Date();
-        let fechaHora = `${dateTime.getFullYear()}-${dateTime.getMonth() + 1}-${dateTime.getDay() - 1} `;
-        fechaHora += `${dateTime.getHours()}:${dateTime.getMinutes()}:${dateTime.getSeconds()}`;
-
-        // CREAMOS EL COMENTARIO
-        comentarioParaAgregar = {
-            "score": calificacion,
-            "description": comentrario,
-            "user": email,
-            "dateTime": fechaHora
-        }
-
-        // AGREGAMOS EL COMENTARIO A LAS OTROS COMENTARIOS
-        comments.unshift(comentarioParaAgregar);
-
-        // MOSTRAMOS NUEVAMENTE LOS COMENTARIOS
-        showComments(comments);
-
-        document.getElementById("ta-comentario").value = "";
-        document.getElementById("slct-calificacion").value = "0";
-
-        alert(`Gracias ${email} por su calificación!`);
-
-    } else {
-        
-        alert("Debe completar el comentario y la calificación");
-    }
-});
-
-//DIEGO FREDES, GRUPO 169//

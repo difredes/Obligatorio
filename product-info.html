@@ -1,201 +1,136 @@
 <!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-    <head>
-        <title>eMercado - Todo lo que busques está aquí</title>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta name="description" content="" />
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
 
-        <link
-            rel="canonical"
-            href="https://getbootstrap.com/docs/4.3/examples/album/"
-        />
-        <link
-            href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
-            rel="stylesheet"
-        />
-        <link href="css/font-awesome.min.css" rel="stylesheet" />
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="login.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" id="user" href="my-profile.html"></a>
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-      aria-haspopup="true" aria-expanded="false" id="user-a">
-    </a>
-
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
-      <a class="dropdown-item" href="cart.html">Carrito</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="login.html">Cerrar Sesión</a>
+      <!--cuadro de usuario -->
+      <div id="info-user">
+        <a class="py-2 d-none d-md-inline-block" id="user" style="color: bisque;">
+        </a>
+      </div>
     </div>
-    <div class="sticky-container">
-      <ul class="sticky">
-        <li>
-          <img src="img/facebook.ico" width="32" height="32">
-          <p><a href="https://www.facebook.com/PlanCeibal/" target="_blank">Siguenos en <br>Facebook</a></p>
-      </li>
-      <li>
-          <img src="img/twitter.ico" width="32" height="32">
-          <p><a href="https://twitter.com/Plan_Ceibal" target="_blank">Siguenos en <br>Twitter</a></p>
-      </li>
-      <li>
-          <img src="img/youtube.ico" width="32" height="32">
-          <p><a href="https://www.youtube.com/user/canalceibal" target="_blank">Subscribete en <br>YouYube</a></p>
-      </li>
-      </ul>
+    <!--cuadro de usuario -->
     </div>
   </nav>
-
-   <!-- ACA SE VA A MOSTRAR LA INFORMACION DEL PRODUCTO SELECCIONADO-->
-   <main role="main">
-    <div class="container p-5">
-        <div class="text-center p-4">
-            <h2>Descripción del producto</h2>
-
-            <p class="lead">
-                Encontrarás aquí toda la información del producto
-                seleccionado.
-            </p>
-
-            <p class="small alert-warning py-3">
-                <strong>Nota: </strong>por simplicidad, cualquiera sea
-                el producto seleccionada previamente, siempre se
-                visualizará el mismo:
-                <strong>Chevrolet Onix Joy</strong>.
-            </p>
-        </div>
-
-        <h3 id="nombreDelProducto"></h3>
-
-        <hr class="my-3" />
-        <div style="display: flex"></div>
-        <dl>
-            <dt>Descripción</dt>
-            <dd>
-                <p id="descripcionDelProducto"></p>
-            </dd>
-
-            <dt>Precio</dt>
-            <dd>
-                <p id="precioDelProducto"></p>
-            </dd>
-
-            <dt>Ventas</dt>
-            <dd>
-                <p id="cantidadDeVentas"></p>
-            </dd>
-
-            <dt>Imágenes ilustrativas</dt>
-            <dd>
-                <div
-                    class="row text-center text-lg-left pt-2"
-                    id="imagenesDelProducto"
-                ></div>
-            </dd>
-
-            <dt><h4>Comentarios y claificaciones</h4></dt>
-            <dd>
-                <p id="comentariosCalificaciones"></p>
-            </dd>
-        </dl>
-
-        <div id="calificacion" style="display: none;">
-            <h3 style="margin-bottom: 1.6rem; margin-top: 7rem">
-                ¿Compraste el produto? ¡Cuéntanos que te pareció!
-            </h3>
-
-            <textarea
-                class="form-control"
-                id="ta-comentario"
-                cols="100"
-                rows="4"
-                placeholder="Escribe aquí!"
-            ></textarea>
-
-            <h2 style="margin-top: 1.9rem; margin-bottom: 1.1rem">
-                Calificación del producto
-            </h2>
-
-            <div style="display: flex">
-                <select
-                    class="custom-select d-block"
-                    id="slct-calificacion"
-                    style="width: 10rem"
-                >
-                    <option value="0" selected>Califique aquí!</option>
-                    <option value="1">⭐</option>
-                    <option value="2">⭐⭐</option>
-                    <option value="3">⭐⭐⭐</option>
-                    <option value="4">⭐⭐⭐⭐</option>
-                    <option value="5">⭐⭐⭐⭐⭐</option>
-                </select>
-
-                <div style="width: 50rem"></div>
-
-                <button
-                    class="btn btn-primary"
-                    id="btn-calificacion"
-                    style="width: 8rem"
-                >
-                    Enviar
-                </button>
-            </div>
-            
-        </div>
-
-        <!-- Por ahora esto no tiene funcionalidad 
-        <a
-            type="button"
-            class="btn btn-light btn-lg btn-block"
-            href="products.html"
-            >Ver productos</a
-        >
-        -->
+  <!--
+  <div class="container p-5">
+    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+      <h4 class="alert-heading">¡A trabajar! :)</h4>
+      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
+      <hr>
+      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
-</main>
+  </div>
+  -->
+  <!--Entrega 3-->
+  <div class="container mt-5">
+    <h3 id="productName"></h3>
+    <hr class="my-3">
+    <dl>
+      <dt>Descripción</dt>
+      <dd>
+        <p id="productDescription"></p>
+      </dd>
 
-<!-- COMENTARIO DE PLAN CEIBAL -->
-<footer class="text-muted">
+      <dt>Costo en dólares américanos: </dt>
+      <dd>
+        <p id="productCost"></p>
+      </dd>
+
+      <dt>Cantidad de vendidos</dt>
+      <dd>
+        <p id="soldCount"></p>
+      </dd>
+
+      <dt>Imágenes ilustrativas</dt>
+      <dd>
+        <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+        </div>
+      </dd>
+    </dl>
+    <!--Entrega 3 - parte 2-->
+    <dt>Comentarios</dt>
+    <dd>
+      <div class="container">
+        <div class="row">
+          <div class="list-group" id="cat-list-container">
+          </div>
+        </div>
+      </div>
+    </dd>
+    <!--Entrega 3 - parte 2-->
+
+    <!--Entrega 3 - parte 3-->
+    <dt>¡Deja tu reseña de este producto para nosotros y otros compradores!</dt>
+    <dd>
+      <div id="newCommentContent" style="display: none;">
+    <dt>
+      <textarea id="newComm" rows="8" cols="60"></textarea>
+    </dt>
+
+    <dt>Calificalo:</dt>
+
+    <select id="newCal">
+
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <br><br>
+
+    <button class="btn btn-primary btn-lg" id="enviarComm">Enviar</button>
+
+  </div>
+  </dd>
+
+  <br>
+
+  <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+  </div>
+
+  <footer class="text-muted">
     <div class="container">
-        <p class="float-right">
-            <a href="#">Volver arriba</a>
-        </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>
-            Clickea <a target="_blank" href="Letra.pdf">aquí</a> para
-            descargar la letra del obligatorio.
-        </p>
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
-</footer>
-
-<div id="spinner-wrapper">
+  </footer>
+  <div id="spinner-wrapper">
     <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-</div>
-
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/user-logged.js"></script>
-<script src="js/init.js"></script>
-<script src="js/product-info.js"></script>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
 </body>
+
 </html>

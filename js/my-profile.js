@@ -4,5 +4,3 @@
 document.addEventListener("DOMContentLoaded", function (e) {
 
 });
-
-//DIEGO FREDES, GRUPO 169//

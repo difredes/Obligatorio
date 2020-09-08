@@ -1,88 +1,130 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>eMercado - Todo lo que busques está aquí</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-  </head>
-  <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <a class="py-2 d-none d-md-inline-block" id="user" href="my-profile.html"></a>
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-        aria-haspopup="true" aria-expanded="false" id="user-a">
-      </a>
-    <!-- El dropwdown funciona en sus tres categorías --> 
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
-        <a class="dropdown-item" href="cart.html">Carrito</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="login.html">Cerrar Sesión</a>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="login.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <!--cuadro de usuario en el index-->
+      <div id="info-user">
+        <a class="py-2 d-none d-md-inline-block" id="user" style="color: bisque;">
+        </a>
       </div>
-          <!-- Se crea caja de redes sociales --> 
-      <div class="sticky-container">
-        <ul class="sticky">
-          <li>
-            <img src="img/facebook.ico" width="32" height="32">
-            <p><a href="https://www.facebook.com/PlanCeibal/" target="_blank">Siguenos en <br>Facebook</a></p>
-        </li>
-        <li>
-            <img src="img/twitter.ico" width="32" height="32">
-            <p><a href="https://twitter.com/Plan_Ceibal" target="_blank">Siguenos en <br>Twitter</a></p>
-        </li>
-        <li>
-            <img src="img/youtube.ico" width="32" height="32">
-            <p><a href="https://www.youtube.com/user/canalceibal" target="_blank">Subscribete en <br>YouYube</a></p>
-        </li>
-        </ul>
-      </div>
-    </nav>
-    <main role="main" class="pb-5">
-      <div class="text-center p-4">
-        <h2>Productos</h2>
-      </div>
-      <div>
-        <div class="text-center p-4">
-          <h2>Filtrar: </h2>
-          <label for="min">Minimo:</label>
-          <input type="number" id="rangeFilterCountMin">
-          <label for="max">Maximo:</label>
-          <input type="number" id="rangeFilterCountMax">
-          <button type="submit" id="rangeFilterCount">Filtrar</button>
-          <button type="button" id="sortAsc" class="fas fa-sort-amount-down mr-1"></button>
-          <button type="button" id="sortDesc" class="fas fa-sort-amount-up mr-1"></button>
-          <button type="button" id="sortByCount" class="fas fa-chart-line">Relev.</button>
-          <button type="reset" id="clearRangeFilter">Borrar</button>
-        </div>
-        <div class="container">
-          <div class="row">
-              <div class="list-group" id="cat-list-container">
-              </div>
+    </div>
+    <!--cuadro de usuario en el index-->
+    </div>
+  </nav>
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Autos</h2>
+    </div>
+
+    <!--Filtros-->
+    <div class="container">
+      <div class="row">
+        <div class="col text-right">
+          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+            <label class="btn btn-light" id="sortByCount">
+              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
+            </label>
+            <!--filtro creciente precio-->
+            <label class="btn btn-light" id="sortByPriceAsc">
+              <input type="radio" name="options" autocomplete="off"><i
+                class="fas fa-sort-amount-down mr-1"></i>Prec.(crec)
+            </label>
+            <!--filtro creciente precio-->
+            <!--filtro descendente precio-->
+            <label class="btn btn-light" id="sortByPriceDesc">
+              <input type="radio" name="options" autocomplete="off"><i
+                class="fas fa-sort-amount-down mr-1"></i>Prec.(desc)
+            </label>
+            <!--filtro descendente precio-->
+
           </div>
+        </div>
       </div>
-      
-      
+      <div class="row justify-content-end">
+        <div class="col-md-6"></div>
+        <div class="col-md-6 col-sm-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <div class="col">
+              <p class="font-weight-normal text-right my-2">Prec.</p>
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-  </main>
-      
-    </footer>
-    <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/products.js"></script>
-  </body>
+      <!--Filtros-->
+
+      <!--buscador por palabra desafiate 2-->
+      <div class="row justify-content-end">
+        <div class="col-md-6"></div>
+        <div class="col-md-6 col-sm-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <div class="col">
+              <p class="font-weight-normal text-right my-2">Buscar por nombre: </p>
+            </div>
+            <div class="col">
+              <input type="text" id="buscador" class="btn btn-light">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button id="limpBusc" class="btn btn-link btn-sm">Limpiar busqueda</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--buscador por palabra desafiate 2-->
+
+      <div class="container">
+        <div class="row">
+          <div class="list-group" id="cat-list-container">
+          </div>
+        </div>
+      </div>
+
+      <div id="spinner-wrapper">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/init.js"></script>
+      <script src="js/products.js"></script>
+</body>
+
 </html>
