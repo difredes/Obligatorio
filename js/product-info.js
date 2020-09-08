@@ -3,51 +3,7 @@ var product = {};
 var commentsArray = [];
 const now = new Date();
 
-/*function showImagesGallery(array) {
 
-    let htmlContentToAppend = "";
-
-    for (let i = 0; i < array.length; i++) {
-        let imageSrc = array[i];
-
-        htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
-            </div>
-        </div>
-        `
-
-        document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
-    }
-}
-
-/*function showComments(array) {
-
-
-    let comentarios = "";
-
-    for (let i = 0; i < array.length; i++) {
-        let comment = array[i];
-
-        comentarios += `
-                <div class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                            <div class="mb-1">
-                                <h4>`+ comment.user + ' - ' + product.currency + '  ' + product.cost + `</h4>
-                             <p>`+ product.description + `</p>
-                         </div>    
-                             <small class="text-muted">` + product.soldCount + ' vendidos' + `</small>
-                          </div>
-
-                      </div>
-                   </div>
-               </div>
-              `
-        document.getElementById("cat-list-container").innerHTML = comentarios;
-    }
-}
-*/
 
 function showProduct(product, arrayComments) {
     let imagesArray = product.images;
@@ -124,22 +80,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             product = resultObj.data;
 
-            /*
-            let productNameHTML = document.getElementById("productName");
-            let productDescriptionHTML = document.getElementById("productDescription");
-            let productCostHTML = document.getElementById("productCost");
-            let productCountHTML = document.getElementById("soldCount");
-
-
-            productNameHTML.innerHTML = product.name;
-            productDescriptionHTML.innerHTML = product.description;
-            productCostHTML.innerHTML = product.cost + " " + product.currency;
-            productCountHTML.innerHTML = product.soldCount + " " + "unidades";
-
-            showImagesGallery(product.images);
-            */
-           //showProduct(product);
-
         }
     });
 
@@ -148,11 +88,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             commentsArray = resultObj.data;
 
-            //Muestro las imagenes en forma de galería
             showProduct(product, commentsArray);
         }
     }); 
-    //Desafiate 3
+    //Desafiate 
     document.getElementById("enviarComm").addEventListener("click", function() {
 
         let newComment = {

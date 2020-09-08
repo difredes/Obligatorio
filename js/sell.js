@@ -10,7 +10,6 @@ let PERCENTAGE_SYMBOL = '%';
 let SUCCESS_MSG = "¡Se ha realizado la publicación con éxito! :)";
 let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
-//Función que se utiliza para actualizar los costos de publicación
 function updateTotalCosts(){
     let unitProductCostHTML = document.getElementById("productCostText");
     let comissionCostHTML = document.getElementById("comissionText");
@@ -25,9 +24,6 @@ function updateTotalCosts(){
     totalCostHTML.innerHTML = totalCostToShow;
 }
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("productCountInput").addEventListener("change", function(){
         productCount = this.value;
@@ -67,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function(e){
         updateTotalCosts();
     });
 
-    //Configuraciones para el elemento que sube archivos
     var dzoptions = {
         url:"/",
         autoQueue: false
@@ -75,11 +70,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     var myDropzone = new Dropzone("div#file-upload", dzoptions);    
 
 
-    //Se obtiene el formulario de publicación de producto
     var sellForm = document.getElementById("sell-info");
-
-    //Se agrega una escucha en el evento 'submit' que será
-    //lanzado por el formulario cuando se seleccione 'Vender'.
     sellForm.addEventListener("submit", function(e){
 
         let productNameInput = document.getElementById("productName");
@@ -87,28 +78,23 @@ document.addEventListener("DOMContentLoaded", function(e){
         let productCost = document.getElementById("productCostInput");
         let infoMissing = false;
 
-        //Quito las clases que marcan como inválidos
         productNameInput.classList.remove('is-invalid');
         productCategory.classList.remove('is-invalid');
         productCost.classList.remove('is-invalid');
 
-        //Se realizan los controles necesarios,
-        //En este caso se controla que se haya ingresado el nombre y categoría.
-        //Consulto por el nombre del producto
+        
         if (productNameInput.value === "")
         {
             productNameInput.classList.add('is-invalid');
             infoMissing = true;
         }
         
-        //Consulto por la categoría del producto
         if (productCategory.value === "")
         {
             productCategory.classList.add('is-invalid');
             infoMissing = true;
         }
 
-        //Consulto por el costo
         if (productCost.value <=0)
         {
             productCost.classList.add('is-invalid');
@@ -117,15 +103,13 @@ document.addEventListener("DOMContentLoaded", function(e){
         
         if(!infoMissing)
         {
-            //Aquí ingresa si pasó los controles, irá a enviar
-            //la solicitud para crear la publicación.
+            
 
             getJSONData(PUBLISH_PRODUCT_URL).then(function(resultObj){
                 let msgToShowHTML = document.getElementById("resultSpan");
                 let msgToShow = "";
     
-                //Si la publicación fue exitosa, devolverá mensaje de éxito,
-                //de lo contrario, devolverá mensaje de error.
+                
                 if (resultObj.status === 'ok')
                 {
                     msgToShow = resultObj.data.msg;
@@ -142,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function(e){
             });
         }
 
-        //Esto se debe realizar para prevenir que el formulario se envíe (comportamiento por defecto del navegador)
         if (e.preventDefault) e.preventDefault();
             return false;
     });
