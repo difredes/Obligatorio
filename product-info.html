@@ -36,6 +36,11 @@
   </nav>
 
   <div class="container mt-5">
+    <div class="text-center p-4">
+      <h2>Descripción de producto</h2>
+      <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+     
+    </div>
     <h3 id="productName"></h3>
     <hr class="my-3">
     <dl>
@@ -44,66 +49,82 @@
         <p id="productDescription"></p>
       </dd>
 
-      <dt>Costo en dólares américanos: </dt>
+      <dt>Precio:</dt>
       <dd>
-        <p id="productCost"></p>
+        <p id="productCount"></p>
       </dd>
 
-      <dt>Cantidad de vendidos</dt>
+      <dt>Moneda</dt>
       <dd>
-        <p id="soldCount"></p>
+        <p id="productCriteria"></p>
+      </dd>
+
+      <dt>Vendidos</dt>
+      <dd>
+        <p id="productSold"></p>
+      </dd>
+
+      <dt>Categoría</dt>
+      <dd>
+        <p id="productCat"></p>
       </dd>
 
       <dt>Imágenes ilustrativas</dt>
       <dd>
-        <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+        <div class="row text-center text-lg-left pt-2" id="productImages">
         </div>
       </dd>
-    </dl>
-    <dt>Comentarios</dt>
-    <dd>
-      <div class="container">
-        <div class="row">
-          <div class="list-group" id="cat-list-container">
-          </div>
+<br>
+<br>
+
+      <h3>Comentarios : </h3>
+      <dd>
+        <div class="row text-center text-lg-left pt-2" id="productcoment"> 
         </div>
-      </div>
-    </dd>
+      </dd>
 
-    <dt>¡Deja tu reseña de este producto para nosotros y otros compradores!</dt>
-    <dd>
-      <div id="newCommentContent" style="display: none;">
-    <dt>
-      <textarea id="newComm" rows="8" cols="60"></textarea>
-    </dt>
+      
 
-    <dt>Calificalo:</dt>
 
-    <select id="newCal">
 
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-    <br><br>
+        <div class="row text-center text-lg-left pt-2" id="newCommentContent"style="display: none;"></div> 
+        <br>
+        <br>
+        <h4>Tu opinion sobre el producto : </h4>
+        <br>
+          <textarea id="newComm" rows="8" cols="60"></textarea>
+          <br><br>
+          <p>Calificalo:</p>
+          
+          <select id="newCal">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <br>
+          <br>
+          <button id="enviarComm"> Enviar</button>
+<br>
+<br>
+<br>
+<br>
+          <h3>Productos relacionados : </h3>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="relatedProducts"> 
+          </div>
+        </dd>
+        
+        </div>
 
-    <button class="btn btn-primary btn-lg" id="enviarComm">Enviar</button>
+        
 
+      
+    </dl>
+    <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
   </div>
-  </dd>
 
-  <br>
-  <section>
-    <div class="contenedor-productos-relacionados">       
-      <div class="productos-relacionados titulo"> <h3>Productos relacionados</h3></div>     
-      <div id="relatedProducts"></div>
-    </div>  
-  </section>
-
-  <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
-  </div>
 
   <footer class="text-muted">
     <div class="container">
