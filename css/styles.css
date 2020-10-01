@@ -60,11 +60,11 @@ footer p {
 }
 
 .light-text {
-  color: white;
+  color: black;
 }
 
 .site-header .dropdown-menu a {
-  color: black;
+  color: skyblue;
 }
 
 .dropzone{
