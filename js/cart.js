@@ -119,12 +119,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
 
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function (ex) {
     getJSONData(ARTICLES_CART).then(function (res) {
         if (res.status === "ok") {
