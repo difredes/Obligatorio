@@ -186,6 +186,121 @@
       Comprar
     </button>
   </div>
+          <hr>
+           
+            
+              <div class="box ">
+               
+                  
+                <!-- Formulario para pago de las compras    -->
+                  
+                </div>
+                <div div.play , div.pause , div.stop , div.previous , div.next
+                {
+                  display: inline;
+                }class="pull-right">
+            <button type="button" class="btn btn-success " data-toggle="modal" data-target="#modal">Pagar con Transferencia</button>
+          </div>
+            <div class="modal fade" tabindex="-1" role="dialog" id="modal">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Condiciones de Transferencia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <section>
+            
+                    <div class="row">               
+                       <div class="col-lg-12">                            
+                      <div class="card wish-list pb-1">                  
+                        <div class="card-body" style="width:35em;">                       
+                            <div class="row">         
+                             <div class="col-lg-6">
+                                <div class="md-form md-outline mb-0 mb-lg-4">
+                                  <label for="nombre">Nombre del Titular</label>
+                                  <input type="text" placeholder="Nombres" class="form-control mb-0 mb-lg-2"
+                                  required>                                  
+                                </div>                  
+                              </div>
+                            <div class="col-lg-6">
+                  
+                               
+                                <div class="md-form md-outline">
+                                  <label for="apellido">Apellido</label>
+                                  <input type="text" placeholder="Apellidos" class="form-control" 
+                                  required>                                  
+                                </div>
+                              </div>
+                              
+                            </div>
+                            
+                  
+                            <div class="d-flex flex-wrap">
+                              <label>Seleccione un banco</label>
+                              <div class="select-outline position-relative w-100">
+                                <select class="mdb-select md-form md-outline dropdown-item" style=" border: 1px solid #ced4da;
+                                border-radius:  .25rem; padding: .375rem .75rem; margin-bottom:1em !important;" required>
+                                  <option value="" disabled selected>Banco</option>
+                                  <option value="Brou">Brou</option>
+                                  <option value="Itau">Itau</option>
+                                  <option value="Santander">Santander</option>
+                                  <option value="Santander">HSBC</option>
+                                  <option value="Santander">Scotiabank</option>
+                                </select>                                
+                              </div>
+                            </div>
+                  
+                           
+                            <div class="md-form md-outline mt-0">
+                              <label for="cuentaOrigen">Cuenta origen</label>
+                              <input type="text"  placeholder=" Cuenta de Origen" 
+                              class="form-control" maxlength="12" style="margin-bottom:1em !important;" required>
+                            </div>
+                  
+                            
+                            <div class="md-form md-outline mt-0">
+                              <label for="destino">Cuenta destino</label>
+                              <input type="text"  placeholder="Cuenta de Destino"
+                                class="form-control" style="margin-bottom:1em !important;"  required>                              
+                            </div>
+                  
+                            <div class="md-form md-outline mt-0">
+                              <label for="telefono">Teléfono de Contacto</label>
+                              <input type="tel" class="form-control" maxlenght="9" 
+                              style="margin-bottom:1em !important;" required=>                              
+                            </div>
+                  
+                     
+                            <div class="md-form md-outline mt-0">
+                              <label for="email">Email de contacto:</label>
+                              <input type="email"  class="form-control" style="margin-bottom:1em !important;" required>                              
+                            </div>
+                  
+                          </div>
+                        </div>
+                      
+                  
+                      </div>
+                        
+                    </div>
+                  
+                  
+                  </section>      
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Realizar Pago</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          
+            </div>
+            
+          </div>
+        </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -209,9 +324,114 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="contidionsModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Pago con Tarjeta</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+          
+          </div>
+      <div class="contenedor">
+      -->
+        <!-- Tarjeta -->
+        <section class="tarjeta" id="tarjeta">
+          <div class="delantera">
+            <div class="logo-marca" id="logo-marca">
+        
+            </div>
+            <img src="img/chip-tarjeta.png" class="chip" alt="">
+            <div class="datos">
+              <div class="grupo" id="numero">
+                <p class="label">Número Tarjeta</p>
+                <p class="numero">#### #### #### ####</p>
+              </div>
+              <div class="flexbox">
+                <div class="grupo" id="nombre">
+                  <p class="label">Nombre Tarjeta</p>
+                  <p class="nombre">ES LA 3</p>
+                </div>
+    
+                <div class="grupo" id="expiracion">
+                  <p class="label">Expiracion</p>
+                  <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="trasera">
+            <div class="barra-magnetica"></div>
+            <div class="datos">
+              <div class="grupo" id="firma">
+                <p class="label">Firma</p>
+                <div class="firma"><p></p></div>
+              </div>
+              <div class="grupo" id="ccv">
+                <p class="label">CCV</p>
+                <p class="ccv"></p>
+              </div>
+            </div>
+            <p class="leyenda">El uso de esta tarjeta se rige por los terminos y condiciones que se estipulan en el contrato oportunamente suscripto. De hallarse esta Tarjeta se agradecera devolverla.</p>
+            <a href="#" class="link-banco">www.eCommerce.com</a>
+          </div>
+        </section>
+
+        <!-- Contenedor Boton Abrir Formulario -->
+        <div class="contenedor-btn">
+          <button class="btn-abrir-formulario" id="btn-abrir-formulario">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+
+        <!-- Formulario -->
+        <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+          <div class="grupo">
+            <label for="inputNumero" >Número Tarjeta</label>
+            <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+          </div>
+          <div class="grupo">
+            <label for="inputNombre">Nombre</label>
+            <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+          </div>
+          <div class="flexbox">
+            <div class="grupo expira">
+              <label for="selectMes">Expiracion</label>
+              <div class="flexbox">
+                <div class="grupo-select">
+                  <select name="mes" id="selectMes">
+                    <option disabled selected>Mes</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="grupo-select">
+                  <select name="year" id="selectYear">
+                    <option disabled selected>Año</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="grupo ccv">
+              <label for="inputCCV">CCV</label>
+              <input type="text" id="inputCCV" maxlength="3">
+            </div>
+          </div>
+          <button type="submit" class="btn-enviar">Realizar Pago</button>
+        </form>
+      </div>
+      >
+
 </div>
 
-  <div id="spinner-wrapper">
+      <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
       <div></div>
