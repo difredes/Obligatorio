@@ -15,7 +15,7 @@
     .dropzone .dz-preview .dz-progress {
       display: block;
       height: 15px;
-      border: 1px solid #aaa; }
+      border: 1px solid rgb(119, 10, 10); }
       .dropzone .dz-preview .dz-progress .dz-upload {
         display: block;
         height: 100%;
