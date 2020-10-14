@@ -46,7 +46,7 @@ var getJSONData = function (url) {
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
 
-  let userLogged = localStorage.getItem('User-Logged');
+  let userLogged = localStorage.getItem('User-Logged'); 
   let infoUser = document.getElementById('info-user');
   let user = document.getElementById('user');
 
