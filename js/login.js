@@ -1,5 +1,3 @@
-
-
 function onSignIn(googleUser) {
 
   var profile = googleUser.getBasicProfile();
@@ -32,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     if (camposCompletos) {
 
       localStorage.setItem('User-Logged', JSON.stringify({ email: inputEmail.value }))
-      window.location = 'inicio.html';  <img class="mb-4" src="img/person.jpg" alt="" width="100" height="50"></img>
+      window.location = 'inicio.html';
     }else{
       alert("Datos incompletos, revisa los campos")
   }
