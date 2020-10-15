@@ -11,6 +11,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
+<body background="img/local.jpg">
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
@@ -29,6 +30,7 @@
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
       aria-haspopup="true" aria-expanded="false" id="user-a">
     </a>
+
     <div class="dropdown-menu">
       <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
       <a class="dropdown-item" href="cart.html">Carrito</a>
@@ -40,4 +42,48 @@
     <div class="text-center p-4">
       <h2>Tu Agencia</h2>
       <p class="lead">¡En esta sección de la pagína podras encontrar el local de la agencia de envío mas cercano a tu domicilio! </p>
-      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1YWJSKEbKTrE6_zNocaOJMAgMZOhKKRFV" width="840" height="650"></iframe>
+      <style type="text/css">
+        .tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+        .tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+        .tftable tr {background-color:#d4e3e5;}
+        .tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+        .tftable tr:hover {background-color:#ffffff;}
+        </style>
+        
+        <table class="tftable" border="1">
+        <tr><th>Ciudad</th><th>Dirección</th><th>Horario</th></tr>
+        <tr><td>San José de Mayo</td><td>Terminal de San José</td><td>8:00Hs a 21:30Hs</td></tr>
+        <tr><td>Colonia Del Sacramento</td><td>Terminal de Colonia del Sacramento</td><td>8:00Hs a 21:30Hs</td></tr>
+        <tr><td>Montevideo</td><td>Terminal de Tres Cruces </td><td>24 Horas</td></tr>
+        <tr><td>Shangrilá</td><td>Aeropuerto Internacional de Carrasco</td><td>24 Horas</td></tr>
+        <tr><td>Maldonado</td><td>Terminal de Maldonado</td><td>8:00Hs a 22:30Hs</td></tr>
+        <tr><td>Salto</td><td>Terminal de Salto</td><td>8:00Hs a 22:30Hs</td></tr>
+        <tr><td>Paysandú</td><td>Terminal de Paysandú  </td><td>8:00Hs a 21:30Hs</td></tr>
+        <tr><td>Young</td><td>Terminal de Young</td><td>10:00Hs a 23:30Hs</td></tr>
+        <tr><td>Fray Bentos</td><td>Terminal de Fray Bentos</td><td>09:00Hs a 21:30Hs</td></tr>
+        <tr><td>Rivera</td><td>Terminal de Rivera</td><td>07:00Hs a 22:00Hs</td></tr>
+        <tr><td>Tacuarembó</td><td>Terminal de Tacuarembó</td><td>09:00Hs a 22:00Hs</td></tr>
+        <tr><td>Rocha</td><td>Terminal De Rocha</td><td>09:00Hs a 20:00Hs</td></tr>
+        <tr><td>Chuy</td><td>Terminal de Chuy</td><td>09:00Hs a 23:00Hs</td></tr>
+        <tr><td>Los Cerrillos</td><td>Terminal  Los Cerrillos</td><td>10:00Hs a 20:00Hs</td></tr>
+        <tr><td>Canelones</td><td>Terminal de Canelones</td><td>7:00Hs a 22:45Hs</td></tr>
+        <tr><td>Atlántida</td><td>Terminal de Atlántida</td><td>9:00Hs a 21:45Hs</td></tr>
+        <tr><td>Montevideo</td><td>Terminal Colón</td><td>9:00Hs a 19:45Hs</td></tr>
+        <tr><td>Durazno</td><td>Terminal de Durazno</td><td>9:00Hs a 20:45Hs</td></tr>
+        <tr><td>Melo</td><td>Terminal de Melo</td><td>9:00Hs a 21:15Hs</td></tr>
+        <tr><td>Mercedes</td><td>Terminal de Mercedes</td><td>9:00Hs a 22:15Hs</td></tr>
+        <tr><td>Trinidad</td><td>Terminal de Trinidad</td><td>10:00Hs a 20:30Hs</td></tr>
+        <tr><td>Florida</td><td>Terminal de Florida</td><td>10:00Hs a 20:30Hs</td></tr>
+        <tr><td>Paso de los Toros</td><td>Terminal de Paso de los Toros</td><td>10:00Hs a 20:30Hs</td></tr>
+        <tr><td>Minas</td><td>Terminal de Lavalleja</td><td>10:00Hs a 20:30Hs</td></tr>
+        <tr><td>Jose Pedro Varela</td><td>Terminal de Jose Pedro Varela</td><td>10:00Hs a 18:30Hs</td></tr>
+        <tr><td>Artigas</td><td>Terminal De Artigas</td><td>9:00Hs a 20:30Hs</td></tr>
+        <tr><td>Treinta y Tres</td><td>Terminal de Treinta y Tres.</td><td>9:00Hs a 20:30Hs:</td></tr>
+        <tr><td>Carmelo</td><td>Terminal de Carmelo</td><td>11:00Hs a 20:30Hs</td></tr>
+        <tr><td>Bella Unión</td><td>Terminal de Bella Unión</td><td>10:00Hs a 21:30Hs</td></tr>
+        </table>
+        <div class="container mt-5">
+          <div class="text-center p-4">
+            <p class="lead">¡En este mapa podras visualizar tu local de envío mas cercano a tu domicilio! </p>
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1YWJSKEbKTrE6_zNocaOJMAgMZOhKKRFV" width="1000" height="780"></iframe>        
+</body>
