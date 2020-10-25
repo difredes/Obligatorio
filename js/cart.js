@@ -1,17 +1,16 @@
 let cartContent= [];//array cargado a travez del json
+var htmlContent='';//contenido del carrito
 var state =[];//estado de los articulos, donde se guarda un id y su valor (el total por articulo, segun su precio y cantidad)
 var itemsTotales = 0; // Para mostrar cuantos articulos se agregaron al carrito
 var buyCost= 0; // costo de la compra para productos obtenidos por json
-var shipping = 0;
-var shippingSelected = 0;
+var shippingSelected = 0;//porcentaje para calcular el envio
+var shipping = 0;//valor del envio
 var payMetodSelected; //variable para indicar que se selecciono un metodo de pago
 var creditPayment; //  constante para indicar que se selecciono credito
-//contenido para desplegar
-htmlContent='';
 
 //contenedor para el alert
 var alerta = document.createElement('div');
-        document.body.appendChild(alerta);
+    document.body.appendChild(alerta);
 
 //funcion que solo se ejecuta cuando carga el carrito
 function calcularCosto(costo, cantidad){
@@ -31,21 +30,20 @@ function calcularCosto(costo, cantidad){
 
 //se calcula el nuevo costo, con la cantidad modificada
 function calcularNuevoCosto(costo, id){
-      var countItem = Number(document.getElementById(id).value);
+      var countItem = Number(document.getElementById(id).value);// se accede al elemento dom que fue modificado y extrae el value
       var monto = costo * countItem
       var total = 0;
-      var itemUpDate = document.querySelector(`td[name='${id}']`)
+      var itemUpDate = document.querySelector(`td[name='${id}']`) // casilla del table donde se muestra el subTotal por articulos
     for(let item of state){ // recorre el array de estados, y si el id del input coincide con algun elemento del array...
        
         if(item.id === id){
            item.total = monto; //...le asigna el nuevo precio total a ese elemento
-           itemUpDate.innerHTML = '$ ' + item.total// actualiza el monto total del articulo
+           itemUpDate.innerHTML = '$ ' + item.total;
         }
         total += item.total; // vuelve a sumar el subtotal con todos los montos del array
         var totalDelaCompra = total + shipping 
         buyCost = total;
     }
-    console.log(state)
     calcularEnvio(shippingSelected)
     var costoSinIva = Math.floor(total / 1.22) ;
     var ivaAmount = Math.floor(total - costoSinIva);
@@ -55,15 +53,17 @@ function calcularNuevoCosto(costo, id){
     }
       
         //Funcion para calcular el costo de envio en base al total de productos.
-    function calcularEnvio(envio){
-        shippingSelected = envio;
-        shipping = Math.floor(buyCost * envio);
+    function calcularEnvio(percent){
+        //percent es un real
+        shippingSelected = percent;
+        shipping = Math.floor(buyCost * percent);
         var totalConEnvio = buyCost + shipping;
 
         document.getElementById('total-cost').innerHTML="$ " + totalConEnvio;
         document.getElementById('shipping').innerHTML="$ " + shipping;
 }
 
+    // FUNCION QUE ELIMINA LOS ARTICULOS
     function deleteItem(item){
         cartContent.articles.splice(item, 1);
         //se resetean valores del carrito para que se calculen en base al estado actual.
@@ -125,20 +125,21 @@ function calcularNuevoCosto(costo, id){
                             </td>
                         </tr>
                     `
-                
                 }
         } else {
             calcularCosto(0,0);
             document.getElementById('shipping').innerHTML="$ " + 0;
         }
-        
-        
         //se despliegan resultados
         document.getElementById('table-cart').innerHTML = htmlContent;
         
     }
 
-    getJSONData(CART_INFO_URL_2).then(function(result){
+    //........
+
+        //FUNCION QUE CARGA LOS ARTICULOS
+    //........
+    getJSONData(CART_INFO_URL_PROPIO).then(function(result){
         if(result.status === 'ok'){
             cartContent = result.data;
             
@@ -149,9 +150,8 @@ function calcularNuevoCosto(costo, id){
         console.log(state)
     });
    
-    // Funcion que muestra alertas
-    
 
+    // Funcion que muestra alertas
     function payMetod(metodo){
 
         let container = document.getElementById('form-dynamic')
@@ -187,6 +187,7 @@ function calcularNuevoCosto(costo, id){
             return creditPayment;
         }
         if(metodo == "transferencia"){
+            creditPayment = "transferencia"
             container.innerHTML = `
             <p class="mt-1 text-info">Seleccione el banco desde el cual hará su transferencia</p>
             <select class="form-control my-1">
@@ -195,6 +196,8 @@ function calcularNuevoCosto(costo, id){
                 <option>Scotiabank</option>
                 <option>BBVA</option>
             </select>
+            <label class="mt-1">Codigo</label>
+            <input id="account" name="inputTarjeta" class="form-control" type="number" placeholder="Numero de cuenta bancaria">
             `;
             document.getElementById('paymentMetod').innerHTML="Transferencia bancaria";
         }
@@ -217,6 +220,17 @@ function calcularNuevoCosto(costo, id){
                 </div> `;
                 }
             }
+        if(creditPayment == "transferencia"){
+            let cuenta = document.getElementById('account').value;
+            if(!cuenta){
+                alerta.innerHTML =` <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Lo siento!</strong> Debes ingresar los datos de tu cuenta
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div> `;
+            }
+        }    
         
         payMetodSelected = 'true';
     })
@@ -270,19 +284,18 @@ function calcularNuevoCosto(costo, id){
                 </div> 
                 `;
             }
-            else{
+            else{ // LA COMPRA SE REALIZA CON EXITO 
                 alerta.innerHTML =`
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Felicitaciones ${localStorage.getItem('current-user')}!</strong> Compra realizada con exito!
+                    <strong>Felicitaciones! ¡Compra realizada con exito!
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                `;
+                `
+                
                 //eliminamos todos los productos del carrito y todos los calculos
-                cartContent.articles.forEach(item => {
-                     cartContent.articles.splice(0)
-                });
+                cartContent.articles.splice(0)
                 itemsTotales = 0;
                 state = [];
                 buyCost = 0;

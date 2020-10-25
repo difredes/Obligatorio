@@ -4,12 +4,32 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>eMercado - Carrito de Compras</title>
+  <link href="css/font-awesome.min.css" rel="stylesheet">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
 </head>
 <body style="background-color:#15c3d396;">
 
@@ -39,9 +59,8 @@
       <a class="dropdown-item" href="index.html">Cerrar Sesión</a>
     </div>
   </nav>
-</h1>
-  <ol class="breadcrumb">
-  </ol>
+    <path fill-rule="evenodd" d="M5.5 3.5a2.5 2.5 0 0 1 5 0V4h-5v-.5zm6 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+  </svg></></h1>
   <section class="pt-5 pb-5">
     <div class="container-fluid">
       <h2 class="font-weight-light" style="font-size: 3em;">Productos : <span id="items-count" class="font-weight-normal"></span></h2>
@@ -66,35 +85,19 @@
             </div>
         </div>
             <div class="row justify-content-around">
-              <div class="col-6 border rounded shadow-sm bg-light p-4 mx-auto">
+              <div class="col-12 col-lg-6 border rounded shadow-sm bg-light p-4 mx-auto">
                     <p class="font-weight-bolder ">Dirección de envío</p>
                     <label for="">Ciudad</label>
                     <select class="form-control">
-                      <option value="1">Artigas</option> 
-                      <option value="2">Canelones</option> 
-                      <option value="3">Cerro Largo</option> 
-                      <option value="4">Colonia</option> 
-                      <option value="5">Durazno</option> 
-                      <option value="6">Flores</option> 
-                      <option value="7">Florida</option> 
-                      <option value="8">Lavalleja</option> 
-                      <option value="9">Maldonado</option> 
-                      <option value="10">Montevideo</option> 
-                      <option value="11">Paysandú</option> 
-                      <option value="12">Río Negro</option> 
-                      <option value="13">Rivera</option> 
-                      <option value="14">Rocha</option> 
-                      <option value="15">Salto</option> 
-                      <option value="16">San José</option> 
-                      <option value="17">Soriano</option> 
-                      <option value="18">Tacuarembó</option> 
-                      <option value="19">Treinta y Tres</option> 
+                      <option value="">Montevideo</option>
+                      <option value="">Canelones</option>
+                      <option value="">Maldonado</option>
                     </select>
                     <p for="" class="mt-3">Datos personales</p>
                     <input id="tel" class="m-2 mt-0 form-control" type="number" placeholder="Telefono de contacto" >
                     <input id="street" class="m-2 form-control" type="text" placeholder="Calle">
-                    <input id="door" class="m-2 form-control" type="text" placeholder="N.de puerta">
-                    <input id="zone" class="m-2 form-control" type="text" placeholder="Barrio">
+                    <input id="door" class="m-2 form-control" type="text" placeholder="N.de puerta/solar">
+                    <input id="zone" class="m-2 form-control" type="text" placeholder="Barrio/zona">
                     <div class="mt-3">
                       <p class="font-weight-bolder">Seleccionar envío</p>
                          <input name="envio" type="radio"" onclick="calcularEnvio(0.15)" id="envio-premium">
@@ -123,8 +126,8 @@
                         <td id="tax" class="text-right border-bottom font-weight-light text-secondary"> </td>
                       </tr>
                       <tr>
-                        <td class="font-weight-light border-bottom w-50">Envío</td>
-                        <td id="shipping" class="text-right border-bottom font-weight-light text-info"> </td>
+                        <td class="font-weight-light border-bottom w-50 text-danger">Envío</td>
+                        <td id="shipping" class="text-right border-bottom font-weight-light text-danger"> </td>
                       </tr>
                       <tr class="border-bottom border-secondary">
                         <td class="font-weight-bolder " style="font-size:1.2em">TOTAL</td>
@@ -146,17 +149,12 @@
               </div>
             </div>
              
-      <div class="col-12">
-        <div class="row mt-4 align-content-end justify-content-between">
-            <div class="col-4 mb-3 mb-m-1 text-md-left">
-                <a href="products.html" class="text-danger">
-                  <span>
-                    </svg>
-      </div>
+
   </div>
   </section>
 
   </div>
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p class="float-right">
@@ -221,11 +219,20 @@
       </div>
     </div>
 
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <!-- firebaseUI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+  <script>
+    $(function () {
+  $('[data-toggle="popover"]').popover()
+})
+  </script>
 </body>
 
 </html>
