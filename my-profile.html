@@ -8,53 +8,154 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
-  <link rel="shortcut icon" href="img/duo.ico" />
+  <!-- Icons-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+  </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+
+  <script src="https://apis.google.com/js/platform.js"></script>
+  <script>
+    var auth2;
+    var googleUser; // The current user
+
+    gapi.load('auth2', function () {
+      auth2 = gapi.auth2.init({
+        client_id: "490154075016-33kn7mda6khg18l899gn8m0bpcnbomdg.apps.googleusercontent.com"
+      });
+    });
+  </script>
 </head>
 
-<body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="cuadro-busqueda">
-        <input class="buscador-txt" type="search" placeholder="Buscar productos, marcas, etc..." id="buscadorInicio">
-        <a class="buscador-btn" href="#">
-          <i class="fas fa-search icono"></i>
-        </a>          
+  <body>
+    <nav class="site-header sticky-top py-1 bg-dark">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+        <div class="cuadro-busqueda">
+          <input class="buscador-txt" type="search" placeholder="Buscar productos, marcas, etc..." id="buscadorInicio">
+          <a class="buscador-btn" href="#">
+            <i class="fas fa-search icono"></i>
+          </a>          
+        </div>
+        <a class="py-2 d-none d-md-inline-block" id="user" href="my-profile.html"></a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+        aria-haspopup="true" aria-expanded="false" id="user-a">
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
+        <a class="dropdown-item" href="cart.html">Carrito</a>
+        <a class="dropdown-item" href="locales.html">Locales</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="index.html">Cerrar Sesión</a>
       </div>
-      <a class="py-2 d-none d-md-inline-block" id="user" href="my-profile.html"></a>
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-      aria-haspopup="true" aria-expanded="false" id="user-a">
-    </a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
-      <a class="dropdown-item" href="cart.html">Carrito</a>
-      <a class="dropdown-item" href="locales.html">Locales</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="index.html">Cerrar Sesión</a>
+    </nav>
+  <div class="container px-0 px-lg-5 py-0 py-lg-4">
+    <h3 class="text-center font-weight-bold p-4">Mi perfil</h3>
+    <div class="form-group py-4 mx-auto mb-5 px-0 px-lg-5 border rounded shadow-sm" style="max-width: 600px;">
+      <div class="col">
+        <div class="form-group">
+          <div class="row py-3 px-4 justify-content-center">
+            <div class="col-8 col-lg-5">
+              <img src="img/perfl.png" id="profileImage" alt="imgPerfil" class="w-100">
+            </div>
+            <div class="w-100"></div>
+            <div class="col-12 col-lg-8">
+              <div class="input-group my-3">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-image"></i></div>
+                </div>
+                <input type="text" class="form-control" id="profileImageURL" placeholder="Dirección de la imágen">
+              </div>
+            </div>
+          </div>
+          <div class="row py-3 px-4 align-items-end">
+            <div class="col-12 col-md-3">
+              <label for="profileName">Nombre: </label>
+            </div>
+            <div class="col">
+              <input type="text" name="profileName" id="profileName" class="form-control">
+            </div>
+          </div>
+          <div class="row py-3 px-4 align-items-end">
+            <div class="col-12 col-md-3">
+              <label for="profileAge">Edad: </label>
+            </div>
+            <div class="col">
+              <input type="number" name="profileAge" id="profileAge" class="form-control">
+            </div>
+          </div>
+          <div class="row py-3 px-4 align-items-end">
+            <div class="col-12 col-md-3">
+              <label for="profileEmail">E-mail: </label>
+            </div>
+            <div class="col">
+              <input type="email" name="profileEmail" id="profileEmail" class="form-control">
+            </div>
+          </div>
+          <div class="row py-3 px-4 align-items-end">
+            <div class="col-12 col-md-3">
+              <label for="profilePhone">Teléfono: </label>
+            </div>
+            <div class="col">
+              <input type="number" name="profilePhone" id="profilePhone" class="form-control">
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row  py-3 px-4 justify-content-end">
+          <div class="col-12 col-lg">
+            <button class="btn btn-block btn-secondary" onclick="deleteProfile()">Eliminar cambios</button>
+          </div>
+          <div class="col-12 col-lg">
+            <button class="btn btn-block btn-primary" onclick="saveProfile()">Guardar cambios</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </nav>
-
-
   </div>
+  <div class="wrapper flex-grow-1"></div>
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+  <!--
+    <div class="alert fade alert-success" role="alert" id="alertResult">
+      <span id="resultSpan"></span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  -->
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
