@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 });
 
-//Get the profile fields and save them
+//Guardar Cambios del Perfil
 function saveProfile() {
-    //Get the fields
+    //Archivos
     let profileImageURL = document.getElementById("profileImageURL").value;
     let profileName = document.getElementById("profileName").value;
     let profileAge = document.getElementById("profileAge").value;
@@ -54,7 +54,7 @@ function loadProfileData(data) {
     profilePhone.value = data.phone;
 }
 
-//Delete the info of the profile in local storage and from the page
+//Se elimina la información del storage//
 function deleteProfile(){
     localStorage.removeItem("profileData");
     document.getElementById("profileImage").src = "img/perfl.png";
