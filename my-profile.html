@@ -88,94 +88,160 @@
       </div>
     </nav>
     <!-- Entrega 7 !-->
-  <div class="container px-0 px-lg-5 py-0 py-lg-4">
-    <h3 class="text-center font-weight-bold p-4">Mi perfil</h3>
-    <div class="form-group py-4 mx-auto mb-5 px-0 px-lg-5 border rounded shadow-sm" style="max-width: 600px;">
-      <div class="col">
-        <div class="form-group">
-          <div class="row py-3 px-4 justify-content-center">
-            <div class="col-8 col-lg-5">
-              <img src="img/perfl.png" id="profileImage" alt="imgPerfil" class="w-100">
+    <div class="container mb-5">
+      <div class="row justify-content-around">
+        <div class="col-8 text-left">
+         <div class="row justify-content-between align-items-end my-5">
+           <div class="col-12 col-lg-5 mb-4 p-0" style="width: 200px; height: 150px;">
+            <div id="img-div">
+              <!-- IMAGEN CARGADO EN LOCALSTORAGE -->
             </div>
-            <div class="w-100"></div>
-            <div class="col-12 col-lg-8">
-              <div class="input-group my-3">
-                <div class="input-group-prepend">
-                  <div class="input-group-text"><i class="fas fa-image"></i></div>
-                </div>
-                <!-- Ingresando la url de una imagén se toma como foto de "perfil" !-->
-                <input type="text" class="form-control" id="profileImageURL" placeholder="Dirección de la imágen">
-              </div>
+           </div>
+           <div class="col-12 col-lg-6 text-right">
+             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Editar <i type="button" class="fas fa-edit"></i></button>
+           </div>
+         </div>
+          <!-- DATOS DE CUENTA -->
+          <h4 class="my-3">Datos de cuenta</h4>
+          <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+            <div class="col-6">
+              <p class="my-0">Usuario</p>
             </div>
-          </div>
-          <!-- Se piden datos basicos !-->
-          <div class="row py-3 px-4 align-items-end">
-            <div class="col-12 col-md-3">
-              <label for="profileName">Nombre: </label>
-            </div>
-            <div class="col">
-              <input type="text" name="profileName" id="profileName" class="form-control">
+            <div class="col-5 bg-light">
+              <p class="text-secondary my-0" id="user-nickname"></p>
             </div>
           </div>
-          <div class="row py-3 px-4 align-items-end">
-            <div class="col-12 col-md-3">
-              <label for="profileAge">Edad: </label>
+          <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+            <div class="col-6">
+              <p class="my-0">Correo</p>
             </div>
-            <div class="col">
-              <input type="number" name="profileAge" id="profileAge" class="form-control">
-            </div>
-          </div>
-          <div class="row py-3 px-4 align-items-end">
-            <div class="col-12 col-md-3">
-              <label for="profileEmail">E-mail: </label>
-            </div>
-            <div class="col">
-              <input type="email" name="profileEmail" id="profileEmail" class="form-control">
+            <div class="col-5 bg-light">
+              <p class="text-secondary my-0" id="user-email"></p>
             </div>
           </div>
-          <div class="row py-3 px-4 align-items-end">
-            <div class="col-12 col-md-3">
-              <label for="profilePhone">Teléfono: </label>
+          <!--FIN DATOS DE CUENTA -->
+          
+          <!-- DATOS PERSONALES -->
+          <h4 class="mt-5 mb-3">Datos personales</h4>
+          <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+            <div class="col-6">
+              <p class="my-0">Nombre completo</p>
             </div>
-            <div class="col">
-              <input type="number" name="profilePhone" id="profilePhone" class="form-control">
+            <div class="col-5 bg-light">
+              <p class="text-secondary my-0" id="realName"></p>
             </div>
           </div>
+          <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+            <div class="col-6">
+              <p class="my-0">Telefono de contacto</p>
+            </div>
+            <div class="col-5 bg-light">
+              <p class="text-secondary my-0" id="user-tel"></p>
+            </div>
+          </div>
+          <div class="row border rounded bg-light p-3 align-items-center shadow-sm">
+            <div class="col-6">
+              <p class="my-0">Documento</p>
+            </div>
+            <div class="col-5 bg-light">
+              <p class="text-secondary my-0" id="user-document"></p>
+            </div>
+          </div>
+           <!--FIN DATOS PERSONALES -->
+  
+           <!-- TARJETAS -->
+           <h4 class="mt-5 mb-3">Tarjetas de crédito</h4>
+           <div class="row border rounded bg-light p-3 align-items-center justify-content-between shadow-sm">
+             <div class="col-6">
+               <p class="my-0 text-warning">Aun no ingresaste ninguna tarjeta de credito</p>
+             </div>
+           </div>
+           <!--FIN TARJETAS -->
         </div>
-        <hr>
-        <!-- Se confirman cambios o si la persona lo desea se !-->
-        <div class="row  py-3 px-4 justify-content-end">
-          <div class="col-12 col-lg">
-            <button class="btn btn-block btn-secondary" onclick="deleteProfile()">Eliminar cambios</button>
-          </div>
-          <div class="col-12 col-lg">
-            <button class="btn btn-block btn-primary" onclick="saveProfile()">Guardar cambios</button>
-          </div>
+      </div>
+    </div>
+
+      <div class="container">
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+          <p>Clickea <a target="_blank" href="mapadelsitio.html">aquí</a> para ver el mapa del sitio.</p>
+      </div>
+    </footer>
+    
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- .............. -->
+    <!-- MODAL FORMULARIO-->
+  
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Editar mis datos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <h3 class="border-bottom">Datos de cuenta</h3>
+              <label for="exampleInputPassword1">Nombre de cuenta</label>
+              <input type="text" class="form-control" id="nick" aria-describedby="emailHelp" required>
+              <small id="emailHelp" class="form-text text-muted">Puede utilizar un seudonimo o sobrenombre</small>
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword1">E-mail</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword1">Foto de perfil</label>
+              <input type="text" class="form-control" id="user-photo" required>
+              <small id="emailHelp" class="form-text text-muted">Debes ingresar la url de tu foto. Ingresa <span><a href="https://imgbb.com/upload">aqui</a></span></small>
+            </div>
+            <div class="form-group">
+              <h3 class="border-bottom">Datos de personales</h3>
+              <label for="exampleInputPassword1">Nombre completo</label>
+              <input type="email" class="form-control" id="real-name" required >
+              <small id="emailHelp" class="form-text text-muted">Nombre y primer apellido</small>
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword1">Teléfono de contacto</label>
+              <input type="text" class="form-control" id="tel" required min="8">
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword1">Documento</label>
+              <input type="number" class="form-control" id="document" required>
+              <small id="emailHelp" class="form-text text-muted">Sin puntos ni guión</small>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" id="guardar" data-dismiss="modal">Guardar cambios</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="wrapper flex-grow-1"></div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="mapadelsitio.html">aquí</a> para ver el mapa del sitio.</p>
-    </div>
-  </footer>
- 
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/my-profile.js"></script>
-</body>
-
-</html>
+  <!--FIN MODAL FORMULARIO-->
+    <!-- .............. -->
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <!-- firebaseUI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+   
+    <script src="js/my-profile.js"></script>
+  </body>
+  
+  </html>

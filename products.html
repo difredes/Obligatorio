@@ -13,7 +13,6 @@
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-color:#067a8a75;">
 
 <body>
   <div class="icon-bar">
@@ -47,93 +46,85 @@
       <a class="dropdown-item" href="index.html">Cerrar Sesión</a>
     </div>
   </nav>
-  <main role="main" class="pb-5">
-    <div class="text-center p-4">
-      <h2>Autos</h2>
-    </div>
+  <main class="mb-5">
+    <section class="p-3">
+      <div class="container text-center p-5">
+        <h1 class="display-4 title-1">Autos</h1>
+      </div>
+    </section>
+    <section class="mt-5 border-bottom shadow-sm p-2 ">
+     <div class="container">
+      <div class="row justify-content-between align-items-end">
+        
+          
+          <div class="col-12 col-md-7 mr-2">
+            <div class="text-right pr-2">
+              <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                <label class="btn btn-light active" id="ordenarAscendente" >
+                    <input type="radio" name="options" autocomplete="off" checked>Menor Precio
+                </label>
+                <label class="btn btn-light" id="ordenarDescendente" >
+                    <input type="radio" name="options" autocomplete="off">Mayor Precio
+                </label>
+                <label class="btn btn-light" id="ordenarDescendenteRelevancia" >
+                    <input type="radio" name="options" autocomplete="off">Mas vendidos
+                </label>
+            </div> 
+            </div>
+            
+            <div class="row text-right">
+              <div class="col-6 col-sm-12 mb-1 container">
+                  <div class="row container p-0 m-0">
+                    <div class="col">
+                      <p class="font-weight-normal text-right my-2">Precio</p>
+                    </div>
+                    <div class="col">
+                      <input class="form-control" type="number" placeholder="min." id="filtroRangoMinimoNum">
+                    </div>
+                    <div class="col">
+                      <input class="form-control" type="number" placeholder="máx." id="filtroRangoMaximoNum">
+                    </div>
+                    <div class="col-2 p-0">
+                      <div class="btn-group" role="group">
+                        <button class="btn btn-light btn-block" id="filtrarResultados">Filtrar</button>
+                        <button class="btn btn-light btn-sm" id="limpiarRango">Limpiar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </section>
+    <section>
+      <div class="container" >
+        <div class="row justify-content-around" id="galeria-productos">
+          
+        </div>
+      </div>
+    </section>
+   
+  </main>
 
+  <footer class="text-muted bg-light">
     <div class="container">
-      <div class="row">
-        <div class="col text-right">
-          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-            <label class="btn btn-light" id="sortByCount">
-              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
-            </label>
-            <label class="btn btn-light" id="sortByPriceAsc">
-              <input type="radio" name="options" autocomplete="off"><i
-                class="fas fa-sort-amount-down mr-1"></i>Prec.(crec)
-            </label>
-         
-            <label class="btn btn-light" id="sortByPriceDesc">
-              <input type="radio" name="options" autocomplete="off"><i
-                class="fas fa-sort-amount-down mr-1"></i>Prec.(desc)
-            </label>
-            <!--filtro descendente precio-->
-
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-end">
-        <div class="col-md-6"></div>
-        <div class="col-md-6 col-sm-12 mb-1 container">
-          <div class="row container p-0 m-0">
-            <div class="col">
-              <p class="font-weight-normal text-right my-2">Prec.</p>
-            </div>
-            <div class="col">
-              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
-            </div>
-            <div class="col">
-              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
-            </div>
-            <div class="col-3 p-0">
-              <div class="btn-group" role="group">
-                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row justify-content-end">
-        <div class="col-md-6"></div>
-        <div class="col-md-6 col-sm-12 mb-1 container">
-          <div class="row container p-0 m-0">
-            <div class="col">
-              <p class="font-weight-normal text-right my-2">Buscar por nombre: </p>
-            </div>
-            <div class="col">
-              <input type="text" id="buscador" class="btn btn-light">
-            </div>
-            <div class="col-3 p-0">
-              <div class="btn-group" role="group">
-                <button id="limpBusc" class="btn btn-link btn-sm">Limpiar busqueda</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="list-group" id="cat-list-container">
-          </div>
-        </div>
-      </div>
-
-      <div id="spinner-wrapper">
-        <div class="lds-ring">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <script src="js/jquery-3.4.1.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/init.js"></script>
-      <script src="js/products.js"></script>
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+  <!-- firebaseUI -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
+  
 </body>
-
 </html>
